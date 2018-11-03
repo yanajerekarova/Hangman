@@ -10,12 +10,12 @@ def is_secret_guessed(secret_word, letters_guessed):
     - Returns True
     - Otherwise, returns False
     """
-    all_guessed == True
+    all_guessed = True
     for letter in secret_word:
         if letter in letters_guessed:
-            all_guessed == True
+            all_guessed = True
         else:
-            all_guessed == False
+            all_guessed = False
             break
     return all_guessed
 
@@ -31,14 +31,15 @@ def get_current_guess(secret_word, letters_guessed):
 
 
 def first_game(secret_word):
+    secret_word = secret_word.lower()
     num_guesses = 15
     letters_guessed = [] 
-    while not(is_secret_guessed) and guesses!=0:
+    while not(is_secret_guessed(secret_word, letters_guessed)) and num_guesses!=0:
         char = input("Guess a letter: ").lower()
         if len(char) != 1:
             print("Enter one letter only!")
             continue
-        chars_guessed.append(char)
+        letters_guessed.append(char)
         if is_secret_guessed(secret_word, letters_guessed):
             print("You won! :)")
             break
@@ -47,6 +48,8 @@ def first_game(secret_word):
         print("You have " + str(num_guesses) + " guesses remaining!")
         print(get_current_guess(secret_word, letters_guessed))
     if num_guesses == 0:
-        print("You lost! :()
+        print("You lost! :(")
+
 secret_word = "Emmanuel"
-first_game(secret_word)              
+first_game(secret_word)
+
