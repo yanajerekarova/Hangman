@@ -47,4 +47,6 @@ def first_game(secret_word):
         print("You have " + str(num_guesses) + " guesses remaining!")
         print(get_current_guess(secret_word, letters_guessed))
     if num_guesses == 0:
-        print("You lost! :(")
+        print("You lost! :()
+secret_word = "Emmanuel"
+first_game(secret_word)              
